@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NewPost from './new_post'
 
 class Timeline extends React.Component {
   constructor(props) {
@@ -51,7 +52,11 @@ class Timeline extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <div className="container" id="comments-title">
+          <h1>Look at comments</h1>
+        </div>
         <div>
+          <NewPost />
           <h3>{this.returnFeed()}</h3>
         </div>
       </React.Fragment>

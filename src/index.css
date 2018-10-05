@@ -6,6 +6,10 @@ p {
   height: 115px
 }
 
+#comments-title {
+  text-align: center
+}
+
 #sign_up {
   margin-top: 50px
 }
