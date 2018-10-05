@@ -19,7 +19,7 @@ class NewPost extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const url = "http://localhost:3000/api/v1/posts";
+    const url = "http://pingpong-almonds-api.herokuapp.com/api/v1/posts";
     fetch(url, {
       method: "POST",
       headers: {
