@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=2000 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
