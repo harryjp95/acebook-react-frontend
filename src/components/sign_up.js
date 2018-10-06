@@ -8,7 +8,7 @@ class SignUp extends Component {
       surname: "",
       email: "",
       password: "",
-      message: "hello world"
+      message: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,9 +42,20 @@ class SignUp extends Component {
           surname: this.state.surname
         }
       })
-    }).then(res => console.log(res));
+    }).then( res => {
+        if (res.status !== 200 && res.status !== 201) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            res.status)
+          return
+        }
+        // Examine the text in the response
+        res.json().then( data => console.log(data)
+        )
+      }
+    )
+    .catch( err => console.log('Fetch Error :-S', err)
+    )
     event.preventDefault();
-    this.confirmationMessage()
   }
 
   render() {
