@@ -30,7 +30,9 @@ class App extends React.Component {
   render() {
     var timeLine = null;
     var logOut = null;
-    this.state.token === "" ? (timeLine = null) : (timeLine = <Timeline />);
+    this.state.token === ""
+      ? (timeLine = null)
+      : (timeLine = <Timeline token={`Bearer ${this.state.token}`} />);
     this.state.token === ""
       ? (logOut = null)
       : (logOut = <LogOut onSubmit={this.logOut} />);

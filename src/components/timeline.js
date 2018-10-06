@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NewPost from './new_post'
+import NewPost from "./new_post";
 
 class Timeline extends React.Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class Timeline extends React.Component {
           <h1>Look at comments</h1>
         </div>
         <div>
-          <NewPost />
+          <NewPost token={this.props.token} />
           <h3>{this.returnFeed()}</h3>
         </div>
       </React.Fragment>
