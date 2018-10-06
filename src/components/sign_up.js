@@ -21,8 +21,9 @@ class SignUp extends Component {
   }
 
   handleSubmit(event) {
-    const url = "http://localhost:3000/api/v1/users";
+    const url = "https://acebook-pingpongalmonds.herokuapp.com/users";
     fetch(url, {
+      mode: 'no-cors',
       method: "POST",
       headers: {
         "Content-Type": "application/json"

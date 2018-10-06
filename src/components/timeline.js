@@ -21,7 +21,7 @@ class Timeline extends React.Component {
                 alt="Generic placeholder image"
               />
               <div className="media-body">
-                <p className="mt-0">James Daniel Malvern</p>
+                <p className="mt-0">{post.user_id}</p>
                 <p>{post.message}</p>
               </div>
             </div>
@@ -33,8 +33,9 @@ class Timeline extends React.Component {
   }
 
   componentDidMount(event) {
-    const url = "http://localhost:3000/api/v1/posts";
+    const url = "https://acebook-pingpongalmonds.herokuapp.com/posts";
     fetch(url, {
+      mode: 'no-cors',
       method: "GET"
     })
       .then(res => res.json())

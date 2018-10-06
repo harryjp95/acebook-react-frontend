@@ -21,8 +21,9 @@ class SignIn extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    const url = "http://localhost:3000/api/v1/sessions";
+    const url = "https://acebook-pingpongalmonds.herokuapp.com/sessions";
     await fetch(url, {
+      mode: 'no-cors',
       method: "POST",
       headers: {
         "Content-Type": "application/json"

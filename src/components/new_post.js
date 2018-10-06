@@ -19,8 +19,9 @@ class NewPost extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const url = "http://localhost:3000/api/v1/posts";
+    const url = "https://acebook-pingpongalmonds.herokuapp.com/posts";
     fetch(url, {
+      mode: 'no-cors',
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -16,7 +16,7 @@ class NavBar extends Component {
         id="my-primary"
       >
         <a className="navbar-brand" href="#">
-          Acebook
+          Facebook
         </a>
         <button
           className="navbar-toggler"
