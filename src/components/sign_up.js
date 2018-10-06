@@ -7,7 +7,8 @@ class SignUp extends Component {
       first_name: "",
       surname: "",
       email: "",
-      password: ""
+      password: "",
+      message: "hello world"
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,6 +19,12 @@ class SignUp extends Component {
     this.setState({
       [target.name]: target.value
     });
+  }
+
+  confirmationMessage() {
+    this.setState({
+      message: `User ${this.state.email} has been successfully created`
+    })
   }
 
   handleSubmit(event) {
@@ -37,6 +44,7 @@ class SignUp extends Component {
       })
     }).then(res => console.log(res));
     event.preventDefault();
+    this.confirmationMessage()
   }
 
   render() {
@@ -97,6 +105,7 @@ class SignUp extends Component {
             Sign Up
           </button>
         </form>
+        <div id="sign-up-message">{this.state.message}</div>
       </div>
     );
   }
