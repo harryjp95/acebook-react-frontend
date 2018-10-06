@@ -22,7 +22,7 @@ class Timeline extends React.Component {
                 alt="Generic placeholder image"
               />
               <div className="media-body">
-                <p className="mt-0">James Daniel Malvern</p>
+                <p className="mt-0">{post.user_id}</p>
                 {console.log(this.userSearch(post.user_id))}
                 <p>{post.message}</p>
               </div>
