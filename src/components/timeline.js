@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NewPost from './new_post'
 
 class Timeline extends React.Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class Timeline extends React.Component {
                 alt="Generic placeholder image"
               />
               <div className="media-body">
-                <p className="mt-0">James Daniel Malvern</p>
+                <p className="mt-0">{post.user_id}</p>
+                {console.log(this.userSearch(post.user_id))}
                 <p>{post.message}</p>
               </div>
             </div>
@@ -33,7 +35,7 @@ class Timeline extends React.Component {
   }
 
   componentDidMount(event) {
-    const url = "http://localhost:3000/api/v1/posts";
+    const url = "http://pingpong-almonds-api.herokuapp.com/api/v1/posts";
     fetch(url, {
       method: "GET"
     })
@@ -41,10 +43,20 @@ class Timeline extends React.Component {
       .then(result => this.setState({ feed: result }));
   }
 
+  userSearch(userId) {
+    const url = `http://pingpong-almonds-api.herokuapp.com/api/v1/users/${userId}`;
+    var result = fetch(url).then(res => res.json());
+    return result;
+  }
+
   render() {
     return (
       <React.Fragment>
+        <div className="container" id="comments-title">
+          <h1>Look at comments</h1>
+        </div>
         <div>
+          <NewPost />
           <h3>{this.returnFeed()}</h3>
         </div>
       </React.Fragment>

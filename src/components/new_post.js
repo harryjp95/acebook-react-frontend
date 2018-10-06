@@ -19,7 +19,7 @@ class NewPost extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const url = "http://localhost:3000/api/v1/posts";
+    const url = "http://pingpong-almonds-api.herokuapp.com/api/v1/posts";
     fetch(url, {
       method: "POST",
       headers: {
@@ -33,22 +33,23 @@ class NewPost extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          What's on your mind?
-          <br />
-          <textarea
-            rows="4"
-            cols="50"
+      <div className="container">
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label for="exampleFormControlTextarea1">Post a comment</label>
+            <textarea 
+            className="form-control" id="exampleFormControlTextarea1" rows="3"
             name="message"
             id="message"
             value={this.state.message}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <br />
-        <input type="submit" value="Post" />
-      </form>
+            onChange={this.handleInputChange}>
+            </textarea>
+            <button type="submit" value="Post" className="btn btn-primary btn-block">
+            Post
+          </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -21,7 +21,7 @@ class SignIn extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    const url = "http://localhost:3000/api/v1/sessions";
+    const url = "http://pingpong-almonds-api.herokuapp.com/api/v1/sessions";
     await fetch(url, {
       method: "POST",
       headers: {

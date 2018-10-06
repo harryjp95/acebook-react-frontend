@@ -21,14 +21,19 @@ class SignUp extends Component {
   }
 
   handleSubmit(event) {
-    const url = "http://localhost:3000/api/v1/users";
+    const url = "http://pingpong-almonds-api.herokuapp.com/api/v1/users";
     fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        user: { email: this.state.email, password: this.state.password }
+        user: {
+          email: this.state.email,
+          password: this.state.password,
+          first_name: this.state.first_name,
+          surname: this.state.surname
+        }
       })
     }).then(res => console.log(res));
     event.preventDefault();
