@@ -13,13 +13,13 @@ First make a copy of this repo:
 Then cd into the directory and run:
 
 ```
-  npm install
+	npm install
 ```
 
 And then:
 
 ```
-  npm start
+	npm start
 ```
 
 There is still a fair bit of work to be done here optimising etc.
